@@ -492,3 +492,57 @@ img{
     height: 600px;
     
 }
+
+
+/* Portfolio Videos with Image Style */
+.portfolio__img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 200px; /* Match your image height */
+    width: 100%; /* Ensures responsive width */
+    margin-bottom: 1.5rem; /* Space between rows */
+}
+
+.portfolio__img:hover {
+    transform: translateY(-8px);
+}
+
+.portfolio__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintains aspect ratio like images */
+    display: block;
+}
+
+.portfolio__link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio__img:hover .portfolio__link {
+    opacity: 1;
+}
+
+.portfolio__link-name {
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+/* Maintain 3 items per row */
+@media (min-width: 768px) {
+    .portfolio__container.bd-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
